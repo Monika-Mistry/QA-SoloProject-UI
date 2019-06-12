@@ -3,7 +3,7 @@ const makeRequest = (method, url, body) => {
     let request = new XMLHttpRequest();
 
     request.onload = () => {
-      if (request.response !== null) {
+      if (request.status >= 200 && request.status <= 299) {
         resolve(request.responseText);
       } else {
         const reason = new Error("Oops, something went wrong!");
