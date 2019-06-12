@@ -15,3 +15,12 @@ const makeRequest = (method, url, body) => {
     request.send(body);
   });
 };
+
+const getAllProgrammes = () => {
+  makeRequest(
+    "GET",
+    "http://localhost:8080/netflixWatchlistApp/api/netflix/getAllProgrammes"
+  )
+    .then(response => console.log(response))
+    .catch(error => console.log(error.message));
+};
