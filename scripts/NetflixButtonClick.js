@@ -10,7 +10,6 @@ const getAllProgrammes = () => {
   const getAProgram = () => {
     //programID
     let id = document.getElementById("netflixId").value;
-    console.log(id);
   
     makeRequest(
       "GET",
