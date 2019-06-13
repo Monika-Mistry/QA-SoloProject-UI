@@ -6,7 +6,7 @@ const makeRequest = (method, url, body) => {
       if (request.status >= 200 && request.status <= 299) {
         resolve(request.responseText);
       } else {
-        const reason = new Error("Oops, something went wrong!");
+        const reason = new Error("Oops, something went wrong! Error code: " + request.status) ;
         reject(reason);
       }
     };

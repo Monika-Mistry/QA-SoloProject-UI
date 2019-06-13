@@ -28,16 +28,16 @@ const getAllProgrammes = () => {
   const addAProgram = () => {
     const program = {
       //country
-      country: document.getElementById().value,
+      country: document.getElementById("country").value,
       //title
-      title: document.getElementById().value,
+      title: document.getElementById("title").value,
       //genreID
-      genreId: document.getElementById().value
+      genreId: document.getElementById("genreId").value
     };
   
     makeRequest(
       "POST",
-      "http://localhost:8080/netflixWatchlistApp/api/addAProgram",
+      "http://localhost:8080/netflixWatchlistApp/api/netflix/addAProgram",
       JSON.stringify(program)
     )
       .then(request => console.log(request))
