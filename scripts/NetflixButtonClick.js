@@ -9,11 +9,12 @@ const getAllProgrammes = () => {
   
   const getAProgram = () => {
     //programID
-    let id = document.getElementById().value;
+    let id = document.getElementById("netflixId").value;
+    console.log(id);
   
     makeRequest(
       "GET",
-      `http://localhost:8080/AccountSETemplate/api/account/getAnAccount/${id}`
+      `http://localhost:8080/netflixWatchlistApp/api/netflix/getAProgram/${id}`
     )
       .then(request => {
         if (request != "null") {
@@ -46,7 +47,7 @@ const getAllProgrammes = () => {
   
   const removeAProgram = () => {
     //programID
-    let id = document.getElementById().value;
+    let id = document.getElementById("netflixId").value;
   
     makeRequest(
       "DELETE",
@@ -63,15 +64,15 @@ const getAllProgrammes = () => {
   const updateAProgram = () => {
     const program = {
       //country
-      country: document.getElementById().value,
+      country: document.getElementById("country").value,
       //title
-      title: document.getElementById().value,
+      title: document.getElementById("title").value,
       //genreID
-      genreId: document.getElementById().value
+      genreId: document.getElementById("genreId").value
     };
   
     //programID
-    let id = document.getElementById().value;
+    let id = document.getElementById("netflixId").value;
   
     makeRequest(
       "PUT",
