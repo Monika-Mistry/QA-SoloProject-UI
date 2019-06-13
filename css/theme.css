@@ -7,3 +7,7 @@ font-weight: bold;
 body {
     padding-top: 70px;
 }
+
+.nav-link.active {
+    font-weight: bold;
+}
