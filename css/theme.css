@@ -1,0 +1,9 @@
+.nav-link:hover {
+background-color: deeppink;
+border-radius: 5px;
+font-weight: bold;
+}
+
+body {
+    padding-top: 50px;
+}
