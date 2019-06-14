@@ -88,7 +88,10 @@
           </div>
           <div class="row">
             <div class="col">
-              <button class="netflixBtn btn btn-dark" onclick="getAllProgrammes()">
+              <button
+                class="netflixBtn btn btn-dark"
+                onclick="getAllProgrammes()"
+              >
                 Get All Programmes
               </button>
             </div>
@@ -103,12 +106,18 @@
               </button>
             </div>
             <div class="col">
-              <button class="netflixBtn btn btn-dark" onclick="removeAProgram()">
+              <button
+                class="netflixBtn btn btn-dark"
+                onclick="removeAProgram()"
+              >
                 Remove Program
               </button>
             </div>
             <div class="col">
-              <button class="netflixBtn btn btn-dark" onclick="updateAProgram()">
+              <button
+                class="netflixBtn btn btn-dark"
+                onclick="updateAProgram()"
+              >
                 Update Program
               </button>
             </div>
@@ -116,34 +125,18 @@
         </form>
       </div>
       <div id="results" class="bg-dark text-light">
-          <br><br>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis
-          purus sed magna cursus porta sed id tortor. Nunc urna lectus,
-          facilisis id nibh nec, finibus pharetra augue. Nulla quis aliquet
-          dolor. Mauris sollicitudin enim et leo venenatis, in dapibus nisl
-          condimentum. Donec rutrum, neque et eleifend vulputate, nisl turpis
-          maximus orci, vitae fringilla urna tortor at quam. Integer orci leo,
-          viverra vitae urna vitae, gravida interdum enim. Nullam efficitur
-          tempus enim vel porttitor. Cras suscipit nunc id egestas ullamcorper.
-          Mauris tempor est ac lobortis tincidunt. Donec finibus magna quis
-          accumsan vulputate. Integer maximus lectus non tellus hendrerit
-          egestas. Nam eget congue quam.
-        </p>
-        <p>
-          Aenean cursus tincidunt leo. Integer non dui in leo vulputate ultrices
-          quis et nibh. Curabitur feugiat pulvinar sagittis. Curabitur dapibus
-          est et tortor ultricies dictum. Morbi pharetra vulputate ante sodales
-          cursus. Cras non lacinia ipsum, sed viverra elit. Quisque tortor nisl,
-          congue eget hendrerit eu, congue id nibh. Proin a lectus nec ligula
-          mollis venenatis vitae nec ante. Nunc rutrum mi eu placerat
-          vestibulum. Vestibulum condimentum, dui ut viverra sollicitudin, enim
-          dolor rhoncus nisl, in ultrices mi nisi imperdiet velit. Aliquam
-          tellus odio, tempus id leo at, vestibulum malesuada nisi. In vel erat
-          commodo, porta magna at, condimentum ligula. Pellentesque habitant
-          morbi tristique senectus et netus et malesuada fames ac turpis
-          egestas. Nulla non felis molestie, hendrerit nunc non, interdum erat.
-        </p>
+        <br /><br />
+        <table
+          id="resultTable"
+          class="table table-light table-striped table-hover container"
+        >
+          <thead class="thead-light">
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Country</th>
+            <th scope="col">Genre</th>
+          </thead>
+        </table>
       </div>
     </main>
     <script
