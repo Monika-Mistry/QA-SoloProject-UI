@@ -1,0 +1,167 @@
+<html>
+  <head>
+    <title>Netflix WatchList App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/theme.css" />
+  </head>
+
+  <body>
+    <header>
+      <div
+        class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top"
+        id="topNavbar"
+        role="navigation"
+      >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarToggler"
+          aria-controls="navbarToggler"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="netflix.html">Netflix</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="watchlist.html">My WatchList</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="netflixForm" class="container">
+        <form action="">
+          <div class="form-group">
+            <label for="netflixId">Program ID</label>
+            <input
+              type="number"
+              class="form-control"
+              id="netflixId"
+              placeholder="Enter a program ID"
+              min="1"
+            />
+          </div>
+          <div class="form-group">
+            <label for="title">Title</label
+            ><input
+              type="text"
+              class="form-control"
+              id="title"
+              placeholder="Enter a Netflix title"
+            />
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label
+            ><input
+              type="text"
+              class="form-control"
+              id="country"
+              placeholder="Enter the country it's available in"
+              aria-describedby="countryHelp"
+            /><small id="countryHelp">Only enter one country.</small>
+          </div>
+          <div class="form-group">
+            <label for="genre">Genre</label
+            ><select class="form-control" id="genre"
+              ><option value="1">Comedy</option
+              ><option value="2">Drama</option
+              ><option value="3">Action</option
+              ><option value="4">Thriller</option
+              ><option value="5">Romance</option
+              ><option value="6">Documentary</option></select
+            >
+          </div>
+          <div class="row">
+            <div class="col">
+              <button class="netflixBtn btn btn-dark" onclick="getAllProgrammes()">
+                Get All Programmes
+              </button>
+            </div>
+            <div class="col">
+              <button class="netflixBtn btn btn-dark" onclick="getAProgram()">
+                Get Program
+              </button>
+            </div>
+            <div class="col">
+              <button class="netflixBtn btn btn-dark" onclick="addAProgram()">
+                Add Program
+              </button>
+            </div>
+            <div class="col">
+              <button class="netflixBtn btn btn-dark" onclick="removeAProgram()">
+                Remove Program
+              </button>
+            </div>
+            <div class="col">
+              <button class="netflixBtn btn btn-dark" onclick="updateAProgram()">
+                Update Program
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="results" class="bg-dark text-light">
+          <br><br>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis
+          purus sed magna cursus porta sed id tortor. Nunc urna lectus,
+          facilisis id nibh nec, finibus pharetra augue. Nulla quis aliquet
+          dolor. Mauris sollicitudin enim et leo venenatis, in dapibus nisl
+          condimentum. Donec rutrum, neque et eleifend vulputate, nisl turpis
+          maximus orci, vitae fringilla urna tortor at quam. Integer orci leo,
+          viverra vitae urna vitae, gravida interdum enim. Nullam efficitur
+          tempus enim vel porttitor. Cras suscipit nunc id egestas ullamcorper.
+          Mauris tempor est ac lobortis tincidunt. Donec finibus magna quis
+          accumsan vulputate. Integer maximus lectus non tellus hendrerit
+          egestas. Nam eget congue quam.
+        </p>
+        <p>
+          Aenean cursus tincidunt leo. Integer non dui in leo vulputate ultrices
+          quis et nibh. Curabitur feugiat pulvinar sagittis. Curabitur dapibus
+          est et tortor ultricies dictum. Morbi pharetra vulputate ante sodales
+          cursus. Cras non lacinia ipsum, sed viverra elit. Quisque tortor nisl,
+          congue eget hendrerit eu, congue id nibh. Proin a lectus nec ligula
+          mollis venenatis vitae nec ante. Nunc rutrum mi eu placerat
+          vestibulum. Vestibulum condimentum, dui ut viverra sollicitudin, enim
+          dolor rhoncus nisl, in ultrices mi nisi imperdiet velit. Aliquam
+          tellus odio, tempus id leo at, vestibulum malesuada nisi. In vel erat
+          commodo, porta magna at, condimentum ligula. Pellentesque habitant
+          morbi tristique senectus et netus et malesuada fames ac turpis
+          egestas. Nulla non felis molestie, hendrerit nunc non, interdum erat.
+        </p>
+      </div>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/NetflixButtonClick.js"></script>
+    <script src="scripts/HttpRequestHandler.js"></script>
+  </body>
+</html>
