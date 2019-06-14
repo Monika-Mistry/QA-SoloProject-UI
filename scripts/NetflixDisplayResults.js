@@ -1,4 +1,5 @@
 let netflix = [];
+let headers = ['netflixId', 'title', 'country', 'genreId'];
 
 const displayResults = results => {
   netflix = [];
@@ -31,9 +32,9 @@ const displayResults = results => {
   netflix.forEach(value => {
     let row = tableBody.insertRow();
 
-    for (let i = 0; i < keys.length; i++) {
+    for (let i = 0; i < headers.length; i++) {
       let cell = row.insertCell();
-      let content = document.createTextNode(value[keys[i]]);
+      let content = document.createTextNode(value[headers[i]]);
       cell.append(content);
     }
   });
