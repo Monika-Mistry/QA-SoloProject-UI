@@ -11,3 +11,7 @@ body {
 .nav-link.active {
     font-weight: bold;
 }
+
+html, body {
+    min-height: 100%;
+}
