@@ -4,7 +4,6 @@ const getAllProgrammes = () => {
     "http://localhost:8080/netflixWatchlistApp/api/netflix/getAllProgrammes"
   )
     .then(response => {
-      console.log(response);
       displayResults(response)
     })
     .catch(error => console.log(error.message));
@@ -18,9 +17,9 @@ const getAProgram = () => {
     "GET",
     `http://localhost:8080/netflixWatchlistApp/api/netflix/getAProgram/${id}`
   )
-    .then(request => {
-      if (request != "null") {
-        console.log(request);
+    .then(response => {
+      if (response != "null") {
+        displayResults(response);
       } else {
         console.log("Program does not exist");
       }
@@ -35,7 +34,7 @@ const addAProgram = () => {
     //title
     title: document.getElementById("title").value,
     //genreID
-    genreId: document.getElementById("genreId").value
+    genreId: document.getElementById("genre").value
   };
 
   makeRequest(
@@ -43,7 +42,9 @@ const addAProgram = () => {
     "http://localhost:8080/netflixWatchlistApp/api/netflix/addAProgram",
     JSON.stringify(program)
   )
-    .then(request => console.log(request))
+    .then(response => {
+      displayResults(response)
+    })
     .catch(error => console.log(error.message));
 };
 
@@ -55,12 +56,11 @@ const removeAProgram = () => {
     "DELETE",
     `http://localhost:8080/netflixWatchlistApp/api/netflix/removeAProgram/${id}`
   )
-    .then(request => {
-      console.log(request);
+    .then(response => {
+      let responseMessage = JSON.parse(response);
+      window.alert(responseMessage.message);
     })
-    .catch(error => {
-      console.log(error.message);
-    });
+    .catch(error => console.log(error.message));
 };
 
 const updateAProgram = () => {
@@ -70,7 +70,7 @@ const updateAProgram = () => {
     //title
     title: document.getElementById("title").value,
     //genreID
-    genreId: document.getElementById("genreId").value
+    genreId: document.getElementById("genre").value
   };
 
   //programID
@@ -81,6 +81,8 @@ const updateAProgram = () => {
     `http://localhost:8080/netflixWatchlistApp/api/netflix/updateAProgram/${id}`,
     JSON.stringify(program)
   )
-    .then(request => console.log(request))
+    .then(response => {
+      displayResults(response)
+    })
     .catch(error => console.log(error.message));
 };
