@@ -33,18 +33,39 @@
         </div>
     </header>
     <main>
-        <div class="row">
-            <div class="col">
-                <button class="myBtn btn btn-dark" type="button" onclick="getWatchlist()">Get</button>
+        <div class="container">
+            <br /><br />
+            <div class="row">
+                <div class="col">
+                    <button class="myBtn btn btn-dark" type="button" onclick="getWatchlist()">Get Watchlist</button>
+                </div>
+                <div class="col">
+                    <button class="myBtn btn btn-dark" type="button" onclick="addToWatchlist()">Add To
+                        Watchlist</button>
+                </div>
+                <div class="col">
+                    <button class="myBtn btn btn-dark" type="button" onclick="deleteFromWatchlist()">Remove From
+                        Watchlist</button>
+                </div>
+                <div class="col">
+                    <button class="myBtn btn btn-dark" type="button" onclick="updateWatchlistProgram()">Update Watch
+                        Status</button>
+                </div>
             </div>
-            <div class="col">
-                <button class="myBtn btn btn-dark" type="button" onclick="addToWatchlist()">Add</button>
-            </div>
-            <div class="col">
-                <button class="myBtn btn btn-dark" type="button" onclick="deleteFromWatchlist()">Delete</button>
-            </div>
-            <div class="col">
-                <button class="myBtn btn btn-dark" type="button" onclick="updateWatchlistProgram()">Update</button>
+            <br /><br />
+        </div>
+        <div>
+            <div id="results" class="bg-dark">
+                <br /><br />
+                <table id="resultTable" class="table table-light table-striped table-hover container">
+                    <thead>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Watch Status</th>
+                        <th>Select</th>
+                    </thead>
+                </table>
+                <br /><br />
             </div>
         </div>
     </main>
