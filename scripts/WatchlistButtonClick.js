@@ -1,6 +1,6 @@
 
 const addToWatchlist = () => {
-    const program;
+    let program;
     makeRequest(
         "POST",
         "http://localhost:8080/netflixWatchlistApp/api/watchlist/addAProgram",
@@ -34,9 +34,8 @@ const getWatchlist = () => {
         })
         .catch(error => console.log(error.message));
 };
-//watchlist/updateAProgram/{id}
 const updateWatchlistProgram = () => {
-    const status;
+    let status;
     let id;
     makeRequest(
         "PUT",

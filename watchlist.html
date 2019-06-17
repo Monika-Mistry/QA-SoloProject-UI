@@ -48,24 +48,10 @@
     </header>
     <main>
       <div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-          tristique dolor in lorem finibus, scelerisque faucibus nulla
-          porttitor. Vivamus iaculis finibus commodo. Aliquam erat volutpat.
-          Nunc lorem nisi, semper in scelerisque eu, condimentum auctor eros. In
-          sit amet turpis hendrerit, vehicula leo at, eleifend est. Cras
-          volutpat orci non urna aliquam, sed finibus risus faucibus. Praesent
-          velit leo, interdum ut accumsan nec, gravida id nunc. Maecenas sit
-          amet quam lacus. Fusce in augue commodo, ultricies nisl ac, dignissim
-          lorem. Mauris sed efficitur sem. Praesent nec erat elit. Duis eleifend
-          nisi est, ac consectetur est gravida condimentum. Curabitur nisi
-          velit, tempor id blandit at, sollicitudin vel elit. Nam eleifend
-          ullamcorper purus, sit amet cursus risus efficitur a. Aenean id sapien
-          non nulla dignissim vehicula sit amet iaculis tellus. Sed lorem leo,
-          ultrices ac erat et, efficitur lobortis eros. Quisque rutrum sodales
-          ultrices. Aenean sit amet diam sed libero euismod malesuada. Vivamus
-          ac erat et magna commodo placerat.
-        </p>
+        <button class="myBtn btn btn-dark" type="button" onclick="getWatchlist()">Get</button>
+        <button class="myBtn btn btn-dark" type="button" onclick="addToWatchlist()">Add</button>
+        <button class="myBtn btn btn-dark" type="button" onclick="deleteFromWatchlist()">Delete</button>
+        <button class="myBtn btn btn-dark" type="button" onclick="updateWatchlistProgram()">Update</button>
       </div>
     </main>
     <script
@@ -83,5 +69,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts/WatchlistButtonClick.js"></script>
   </body>
 </html>
