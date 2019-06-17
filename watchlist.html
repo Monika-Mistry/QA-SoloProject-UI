@@ -36,6 +36,23 @@
         <div class="container">
             <br /><br />
             <div class="row">
+                <div class="form-group col">
+                    <label for="netflixProgram">Title</label>
+                    <select class="form-control" id="netflixProgram">
+                        <option selected="selected" disabled="disabled">Select a program</option>
+                    </select>
+                </div>
+                <div class="form-group col">
+                    <label for="status">Watch Status</label>
+                    <select class="form-control" id="status">
+                        <option selected="selected" disabled="disabled">Select watch status</option>
+                        <option value="PENDING">Not Started</option>
+                        <option value="INPROGRESS">Watching</option>
+                        <option value="COMPLETED">Finished</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col">
                     <button class="myBtn btn btn-dark" type="button" onclick="getWatchlist()">Get Watchlist</button>
                 </div>
