@@ -34,7 +34,7 @@ const addAProgram = () => {
     //title
     title: document.getElementById("title").value,
     //genreID
-    genreId: document.getElementById("genreId").value
+    genreId: document.getElementById("genre").value
   };
 
   makeRequest(
@@ -57,7 +57,8 @@ const removeAProgram = () => {
     `http://localhost:8080/netflixWatchlistApp/api/netflix/removeAProgram/${id}`
   )
     .then(response => {
-      displayResults(response)
+      let responseMessage = JSON.parse(response);
+      window.alert(responseMessage.message);
     })
     .catch(error => console.log(error.message));
 };
@@ -69,7 +70,7 @@ const updateAProgram = () => {
     //title
     title: document.getElementById("title").value,
     //genreID
-    genreId: document.getElementById("genreId").value
+    genreId: document.getElementById("genre").value
   };
 
   //programID
