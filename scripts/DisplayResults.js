@@ -41,3 +41,8 @@ const netflixDisplayResults = results => {
   let headers = ["netflixId", "title", "country", "genreId"];
   displayResults(results, headers);
 };
+
+const watchlistDisplayResults = results => {
+  let headers = ["title", "status"];
+  displayResults(results, headers);
+}
