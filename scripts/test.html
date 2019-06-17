@@ -1,0 +1,28 @@
+<html>
+
+<body>
+    <input type="number" id="netflixId">
+    <input type="text" id="country">
+    <input type="text" id="title">
+    <input type="number" id="genreId">
+    <button type="button" onclick="getAllProgrammes()">Test Me!</button>
+    <!-- <button type="button" onclick="getAProgram()">Test Me!</button> -->
+    <!-- <button type="button" onclick="removeAProgram()">Test Me!</button> -->
+    <!-- <button type="button" onclick="addAProgram()">Test Me!</button> -->
+    <button type="button" onclick="updateAProgram()">Test Me!</button>
+    <div>
+        <table id="resultTable">
+            <thead>
+                <th>#</th>
+                <th>Title</th>
+                <th>Country</th>
+                <th>Genre ID</th>
+            </thead>
+        </table>
+    </div>
+    <script src="NetflixButtonClick.js"></script>
+    <script src="HttpRequestHandler.js"></script>
+    <script src="NetflixDisplayResults.js"></script>
+</body>
+
+</html>

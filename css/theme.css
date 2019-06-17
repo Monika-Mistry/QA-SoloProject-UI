@@ -1,9 +1,13 @@
-.nav-link:hover {
-background-color: deeppink;
+.nav-link:hover, .netflixBtn:hover {
+background-color: #E50914; /*netflix-red*/
 border-radius: 5px;
 font-weight: bold;
 }
 
 body {
-    padding-top: 50px;
+    padding-top: 70px;
+}
+
+.nav-link.active {
+    font-weight: bold;
 }
