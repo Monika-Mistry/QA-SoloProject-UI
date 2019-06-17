@@ -1,15 +1,12 @@
-let netflix = [];
-let headers = ['netflixId', 'title', 'country', 'genreId'];
-
-const displayResults = results => {
-  netflix = [];
+const displayResults = (results, headers) => {
+  let records = [];
   let resultObj = JSON.parse(results);
 
   //array of netflix programmes
   if (Array.isArray(resultObj)) {
-    netflix = netflix.concat(resultObj);
+    records = records.concat(resultObj);
   } else {
-    netflix.push(resultObj);
+    records.push(resultObj);
   }
 
   //create table
@@ -29,7 +26,7 @@ const displayResults = results => {
   tableBody = resultTable.createTBody();
 
   //create table rows
-  netflix.forEach(value => {
+  records.forEach(value => {
     let row = tableBody.insertRow();
 
     for (let i = 0; i < headers.length; i++) {
@@ -38,4 +35,9 @@ const displayResults = results => {
       cell.append(content);
     }
   });
+};
+
+const netflixDisplayResults = results => {
+  let headers = ["netflixId", "title", "country", "genreId"];
+  displayResults(results, headers);
 };
