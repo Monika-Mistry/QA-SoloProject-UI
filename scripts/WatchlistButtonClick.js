@@ -7,7 +7,7 @@ const addToWatchlist = () => {
         JSON.stringify(program)
     )
         .then(response => {
-            console.log(response)
+            watchlistDisplayResults(response)
         })
         .catch(error => console.log(error.message));
 };
@@ -19,7 +19,7 @@ const removeFromWatchlist = () => {
         `http://localhost:8080/netflixWatchlistApp/api/watchlist/removeAProgram\{id}`
     )
         .then(response => {
-            console.log(response)
+            watchlistDisplayResults(response)
         })
         .catch(error => console.log(error.message));
 };
@@ -30,7 +30,7 @@ const getWatchlist = () => {
         "http://localhost:8080/netflixWatchlistApp/api/watchlist/getWatchlist"
     )
         .then(response => {
-            console.log(response)
+            watchlistDisplayResults(response)
         })
         .catch(error => console.log(error.message));
 };
@@ -43,7 +43,7 @@ const updateWatchlistProgram = () => {
         JSON.stringify(status)
     )
         .then(response => {
-            console.log(response)
+            watchlistDisplayResults(response)
         })
         .catch(error => console.log(error.message));
 };

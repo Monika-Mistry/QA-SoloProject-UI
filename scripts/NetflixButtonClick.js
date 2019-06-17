@@ -4,7 +4,7 @@ const getAllProgrammes = () => {
     "http://localhost:8080/netflixWatchlistApp/api/netflix/getAllProgrammes"
   )
     .then(response => {
-      displayResults(response)
+      netflixDisplayResults(response)
     })
     .catch(error => console.log(error.message));
 };
@@ -19,7 +19,7 @@ const getAProgram = () => {
   )
     .then(response => {
       if (response != "null") {
-        displayResults(response);
+        netflixDisplayResults(response);
       } else {
         console.log("Program does not exist");
       }
@@ -43,7 +43,7 @@ const addAProgram = () => {
     JSON.stringify(program)
   )
     .then(response => {
-      displayResults(response)
+      netflixDisplayResults(response)
     })
     .catch(error => console.log(error.message));
 };
@@ -82,7 +82,7 @@ const updateAProgram = () => {
     JSON.stringify(program)
   )
     .then(response => {
-      displayResults(response)
+      netflixDisplayResults(response)
     })
     .catch(error => console.log(error.message));
 };
