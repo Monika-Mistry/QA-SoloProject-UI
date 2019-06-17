@@ -5,20 +5,20 @@ const getTitles = () => {
         "http://localhost:8080/netflixWatchlistApp/api/netflix/getAllProgrammes"
     )
         .then(response => {
-            populateDropDown(response)
+            populateTitles(response);
         })
         .catch(error => console.log(error.message));
 }
 
 const populateTitles = (programmes) => {
     results = [];
-    let resultObj = JSON.parse(results);
+    let resultObj = JSON.parse(programmes);
     
     //array of netflix programmes
     if (Array.isArray(resultObj)) {
-        netflix = netflix.concat(resultObj);
+        results = results.concat(resultObj);
     } else {
-        netflix.push(resultObj);
+        results.push(resultObj);
     }
 
     //select dropdown
@@ -27,8 +27,8 @@ const populateTitles = (programmes) => {
     //populate dropdown
     results.forEach(value => {
         let option = document.createElement('option');
-        option.value = value[netflixId];
-        option.innerHTML = value[title];
+        option.value = value.netflixId;
+        option.innerHTML = value.title;
         dropdown.appendChild(option);
     })
 
