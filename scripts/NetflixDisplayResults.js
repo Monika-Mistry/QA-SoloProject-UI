@@ -9,7 +9,7 @@ const displayResults = results => {
   if (Array.isArray(resultObj)) {
     netflix = netflix.concat(resultObj);
   } else {
-    netflix.push(resultsObj);
+    netflix.push(resultObj);
   }
 
   //create table
