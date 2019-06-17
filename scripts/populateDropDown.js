@@ -26,7 +26,10 @@ const populateTitles = (programmes) => {
 
     //populate dropdown
     results.forEach(value => {
-        
+        let option = document.createElement('option');
+        option.value = value[netflixId];
+        option.innerHTML = value[title];
+        dropdown.appendChild(option);
     })
 
 
