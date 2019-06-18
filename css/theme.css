@@ -1,4 +1,4 @@
-.nav-link:hover, .netflixBtn:hover {
+.nav-link:hover, .myBtn:hover {
 background-color: #E50914; /*netflix-red*/
 border-radius: 5px;
 font-weight: bold;
@@ -10,4 +10,8 @@ body {
 
 .nav-link.active {
     font-weight: bold;
+}
+
+html, body {
+    min-height: 100%;
 }
