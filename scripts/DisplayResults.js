@@ -1,4 +1,4 @@
-const displayResults = (results, headers, numFields, fct) => {
+const displayResults = (results, headers, numFields, fct, btnfct) => {
   let records = [];
   let resultObj = JSON.parse(results);
 
@@ -45,6 +45,7 @@ const displayResults = (results, headers, numFields, fct) => {
         button.type = "button";
         button.className = "btn btn-dark myBtn";
         button.innerHTML = fct;
+        button.onclick = btnfct;
         cell.append(button);
       }
     }
@@ -60,10 +61,10 @@ const netflixDisplayResults = results => {
     "details",
     "select"
   ];
-  displayResults(results, headers, 4, "Add");
+  displayResults(results, headers, 4, "Add", "addToWatchlist()");
 };
 
 const watchlistDisplayResults = results => {
   let headers = ["title", "status", "details", "select"];
-  displayResults(results, headers, 2, "Delete");
+  displayResults(results, headers, 2, "Delete", "deleteFromWatchlist()");
 };
