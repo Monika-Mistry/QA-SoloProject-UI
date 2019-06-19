@@ -38,7 +38,7 @@ const removeFromWatchlist = () => {
   let id = document.getElementById("netflixProgram").value;
   makeRequest(
     "DELETE",
-    removeWatchlist + id
+    removeWatchlist.concat(id)
   )
     .then(response => {
       watchlistDisplayResults(response);
@@ -47,11 +47,13 @@ const removeFromWatchlist = () => {
 };
 
 const removeFromWatchlistTable = id => {
+  console.log(id);
   makeRequest(
     "DELETE",
-    removeWatchlist + id
+    removeWatchlist.concat(id)
   )
     .then(response => {
+      console.log(response);
       watchlistDisplayResults(response);
     })
     .catch(error => console.log(error.message));
@@ -74,10 +76,11 @@ const updateWatchlistProgram = () => {
   console.log(id);
   makeRequest(
     "PUT",
-    updateWatchlist + id,
-    JSON.stringify(status)
+    updateWatchlist.concat(id),
+    status
   )
     .then(response => {
+      console.log(response);
       watchlistDisplayResults(response);
     })
     .catch(error => console.log(error.message));

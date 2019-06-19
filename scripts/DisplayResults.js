@@ -47,7 +47,9 @@ const displayResults = (results, headers, numFields, fct, method) => {
         btnCRUD.type = "button";
         btnCRUD.className = "btn btn-dark myBtn";
         btnCRUD.value = fct;
-        btnCRUD.addEventListener("click", () => {btnFunction});
+        btnCRUD.addEventListener("click", function () {
+          btnFunction;
+        });
 
         cell.append(btnCRUD);
       }

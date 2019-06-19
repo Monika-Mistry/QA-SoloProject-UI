@@ -28,7 +28,7 @@ const getAProgram = () => {
 
   makeRequest(
     "GET",
-    getANetflix + id
+    getANetflix.concat(id)
   )
     .then(response => {
       if (response != "null") {
@@ -69,7 +69,7 @@ const removeAProgram = () => {
 
   makeRequest(
     "DELETE",
-    removeNetflix + id
+    removeNetflix.concat(id)
   )
     .then(response => {
       let responseMessage = JSON.parse(response);
@@ -93,7 +93,7 @@ const updateAProgram = () => {
 
   makeRequest(
     "PUT",
-    updateNetflix + id,
+    updateNetflix.concat(id),
     JSON.stringify(program)
   )
     .then(response => {
