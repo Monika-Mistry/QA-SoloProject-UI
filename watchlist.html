@@ -89,7 +89,7 @@
             <button
               class="myBtn btn btn-dark"
               type="button"
-              onclick="deleteFromWatchlist()"
+              onclick="removeFromWatchlist()"
             >
               Remove From Watchlist
             </button>
@@ -114,8 +114,10 @@
             class="table table-light table-striped table-hover container"
           >
             <thead>
-              <th>Title</th>
+              <!-- <th>Title</th> -->
+              <th>Program</th>
               <th>Watch Status</th>
+              <th>More Details</th>
               <th>Select</th>
             </thead>
           </table>
@@ -139,6 +141,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="scripts/WatchlistButtonClick.js"></script>
+    <script src="scripts/NetflixButtonClick.js"></script>
     <script src="scripts/populateDropDown.js"></script>
     <script src="scripts/DisplayResults.js"></script>
     <script src="scripts/HttpRequestHandler.js"></script>
