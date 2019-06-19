@@ -1,15 +1,20 @@
 // const getAllGenre = "http://34.90.182.15:8888/netflixWatchlistApp/api/genre/getAllGenres";
-// const getAllTitle = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/getAllProgrammes";
+
 
 const getAllGenre =
   "http://localhost:8080/netflixWatchlistApp/api/genre/getAllGenres";
-const getAllTitle =
-  "http://localhost:8080/netflixWatchlistApp/api/netflix/getAllProgrammes";
+
 
 const getTitles = () => {
-  makeRequest("GET", getAllTitle)
+  makeRequest("GET", getAllNetflix)
     .then(response => {
-      populateTitles(response);
+      let programmes = [];
+      let responseObj = JSON.parse(response);
+      responseObj.forEach(element => {
+        programmes.push(netflixMaker(element));
+      });
+
+      populateTitles(JSON.stringify(programmes));
     })
     .catch(error => console.log(error.message));
 };
@@ -53,3 +58,4 @@ const populateDropDown = (response, drpdwn, value, field) => {
     dropdown.appendChild(option);
   });
 };
+

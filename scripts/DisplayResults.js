@@ -92,3 +92,10 @@ const watchlistDisplayResults = results => {
   displayResults(results, headers, 2, "Delete", "removeFromWatchlistTable");
 
 };
+
+const watchlistDisplayAllResults = results => {
+  let headers = ["title", "status", "details", "select"];
+
+  displayResults(results, headers, 2, "Delete", "removeFromWatchlistTable");
+
+};
