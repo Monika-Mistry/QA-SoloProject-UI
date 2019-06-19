@@ -13,7 +13,7 @@ const getTitles = () => {
 };
 
 const getGenres = () => {
-    makeRequest("GET", getAllGenres).then(response => {
+    makeRequest("GET", getAllGenre).then(response => {
         populateGenres(response);
     }).catch(error => console.log(error.message));
 };
@@ -32,8 +32,8 @@ const populateDropDown = (response, drpdwn, value, field) => {
     let results = [];
     resultObj = JSON.parse(response);
     //add to array
-    (Array.isArray(resultObj)) {
-        lts = results.concat(resultObj);
+    if (Array.isArray(resultObj)) {
+        results = results.concat(resultObj);
     } else {
         results.push(resultObj);
     };
@@ -46,8 +46,8 @@ const populateDropDown = (response, drpdwn, value, field) => {
     //populate dropdown
     results.forEach(item => {
         let option = document.createElement('option');
-        option.value = item.value;
-        option.innerHTML = item.field;
+        option.value = item[value];
+        option.innerHTML = item[field];
         dropdown.appendChild(option);
     });
 
