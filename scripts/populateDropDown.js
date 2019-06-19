@@ -1,7 +1,10 @@
+const getAllGenre = "http://34.90.182.15:8888/netflixWatchlistApp/api/genre/getAllGenres";
+const getAllTitle = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/getAllProgrammes";
+
 const getTitles = () => {
     makeRequest(
         "GET",
-        "http://localhost:8080/netflixWatchlistApp/api/netflix/getAllProgrammes"
+        getAllTitle
     )
         .then(response => {
             populateTitles(response);
@@ -10,7 +13,7 @@ const getTitles = () => {
 }; 
 
 const getGenres = () => {
-Request("GET", "http://localhost:8080/netflixWatchlistApp/api/genre/getAllGenres").then(response => {
+Request("GET", getAllGenres).then(response => {
     populateGenres(response);
     }).catch(error => console.log(error.message));
 }; 
