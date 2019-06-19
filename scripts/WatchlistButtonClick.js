@@ -55,7 +55,7 @@ const updateWatchlistProgram = () => {
   let id = document.getElementById("netflixProgram").nodeValue;
   makeRequest(
     "PUT",
-    updateWatchlist.concat(id),
+    updateWatchlist + id,
     JSON.stringify(status)
   )
     .then(response => {
