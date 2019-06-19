@@ -10,39 +10,39 @@ const getTitles = () => {
             populateTitles(response);
         })
         .catch(error => console.log(error.message));
-}; 
+};
 
 const getGenres = () => {
-Request("GET", getAllGenres).then(response => {
-    populateGenres(response);
+    makeRequest("GET", getAllGenres).then(response => {
+        populateGenres(response);
     }).catch(error => console.log(error.message));
-}; 
+};
 
 const populateTitles = programmes => {
     populateDropDown(programmes, "netflixProgram", "netflixId", "title");
 
 
 };
-                                 
+
 const populateGenres = genres => {
-    populateDropDown(genres, "genre", "genreId", "genre);
-};  
+    populateDropDown(genres, "genre", "genreId", "genre");
+};
 
 const populateDropDown = (response, drpdwn, value, field) => {
     let results = [];
     resultObj = JSON.parse(response);
     //add to array
-     (Array.isArray(resultObj)) {
-    lts = results.concat(resultObj);
+    (Array.isArray(resultObj)) {
+        lts = results.concat(resultObj);
     } else {
-    results.push(resultObj);
-    }; 
-    
+        results.push(resultObj);
+    };
+
 
 
     //select dropdown
     let dropdown = document.getElementById(drpdwn);
-    
+
     //populate dropdown
     results.forEach(item => {
         let option = document.createElement('option');
