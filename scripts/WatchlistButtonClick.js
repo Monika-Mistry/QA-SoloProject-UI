@@ -1,3 +1,8 @@
+const getWatchlist = "http://34.90.182.15:8888/netflixWatchlistApp/api/watchlist/getWatchlist";
+const removeWatchlist = "http://34.90.182.15:8888/netflixWatchlistApp/api/watchlist/addAProgram";
+const addWatchlist = "http://34.90.182.15:8888/netflixWatchlistApp/api/watchlist/addAProgram";
+const updateWatchlist = `http://34.90.182.15:8888/netflixWatchlistApp/api/watchlist/updateAProgram/{id}`;
+
 const addToWatchlist = () => {
   //netflix ID
   let title = document.getElementById("netflixProgram");
@@ -14,7 +19,7 @@ const addToWatchlist = () => {
   };
   makeRequest(
     "POST",
-    "http://localhost:8080/netflixWatchlistApp/api/watchlist/addAProgram",
+    addWatchlist,
     JSON.stringify(program)
   )
     .then(response => {
@@ -27,7 +32,7 @@ const removeFromWatchlist = () => {
   let id = document.getElementById("netflixProgram").nodeValue;
   makeRequest(
     "DELETE",
-    `http://localhost:8080/netflixWatchlistApp/api/watchlist/removeAProgram\{id}`
+    removeWatchlist
   )
     .then(response => {
       watchlistDisplayResults(response);
@@ -38,7 +43,7 @@ const removeFromWatchlist = () => {
 const getWatchlist = () => {
   makeRequest(
     "GET",
-    "http://localhost:8080/netflixWatchlistApp/api/watchlist/getWatchlist"
+    getWatchlist
   )
     .then(response => {
       watchlistDisplayResults(response);
@@ -50,7 +55,7 @@ const updateWatchlistProgram = () => {
   let id = document.getElementById("netflixProgram").nodeValue;
   makeRequest(
     "PUT",
-    `http://localhost:8080/netflixWatchlistApp/api/watchlist/updateAProgram/{id}`,
+    updateWatchlist,
     JSON.stringify(status)
   )
     .then(response => {
