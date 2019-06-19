@@ -1,7 +1,20 @@
+// const getAllNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/getAllProgrammes";
+// const getANetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/getAProgram/";
+// const removeNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/removeAProgram";
+// const addNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/addAProgram/";
+// const updateNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/updateAProgram/";
+
+
+const getAllNetflix = "http://localhost:8080/netflixWatchlistApp/api/netflix/getAllProgrammes";
+const getANetflix = "http://localhost:8080/netflixWatchlistApp/api/netflix/getAProgram/";
+const removeNetflix = "http://localhost:8080/netflixWatchlistApp/api/netflix/removeAProgram/";
+const addNetflix = "http://localhost:8080/netflixWatchlistApp/api/netflix/addAProgram";
+const updateNetflix = "http://localhost:8080/netflixWatchlistApp/api/netflix/updateAProgram/";
+
 const getAllProgrammes = () => {
   makeRequest(
     "GET",
-    "http://localhost:8080/netflixWatchlistApp/api/netflix/getAllProgrammes"
+    getAllNetflix
   )
     .then(response => {
       netflixDisplayResults(response)
@@ -15,7 +28,7 @@ const getAProgram = () => {
 
   makeRequest(
     "GET",
-    `http://localhost:8080/netflixWatchlistApp/api/netflix/getAProgram/${id}`
+    getANetflix.concat(id)
   )
     .then(response => {
       if (response != "null") {
@@ -34,12 +47,14 @@ const addAProgram = () => {
     //title
     title: document.getElementById("title").value,
     //genreID
-    genreId: document.getElementById("genre").value
+    genreId: Number(document.getElementById("genre").value)
   };
 
+  console.log(program);
+  console.log(JSON.stringify(program));
   makeRequest(
     "POST",
-    "http://localhost:8080/netflixWatchlistApp/api/netflix/addAProgram",
+    addNetflix,
     JSON.stringify(program)
   )
     .then(response => {
@@ -54,7 +69,7 @@ const removeAProgram = () => {
 
   makeRequest(
     "DELETE",
-    `http://localhost:8080/netflixWatchlistApp/api/netflix/removeAProgram/${id}`
+    removeNetflix.concat(id)
   )
     .then(response => {
       let responseMessage = JSON.parse(response);
@@ -78,11 +93,33 @@ const updateAProgram = () => {
 
   makeRequest(
     "PUT",
-    `http://localhost:8080/netflixWatchlistApp/api/netflix/updateAProgram/${id}`,
+    updateNetflix.concat(id),
     JSON.stringify(program)
   )
     .then(response => {
       netflixDisplayResults(response)
+    })
+    .catch(error => console.log(error.message));
+};
+
+
+const addToWatchlistTable = id => {
+  //watch status
+  let status = "PENDING";
+
+  //program
+  const program = {
+    netflixId: id,
+    status: status
+  };
+
+  makeRequest(
+    "POST",
+    addWatchlist,
+    JSON.stringify(program)
+  )
+    .then(response => {
+      watchlistDisplayResults(response);
     })
     .catch(error => console.log(error.message));
 };
