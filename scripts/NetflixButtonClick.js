@@ -1,8 +1,8 @@
 const getAllNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/getAllProgrammes";
-const getANetflix = `http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/getAProgram/${id}`;
+const getANetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/getAProgram/";
 const removeNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/addAProgram"
-const addNetflix = `http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/removeAProgram/${id}`;
-const updateNetflix = `http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/updateAProgram/${id}`;
+const addNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/removeAProgram/";
+const updateNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/updateAProgram/";
 
 const getAllProgrammes = () => {
   makeRequest(
@@ -21,7 +21,7 @@ const getAProgram = () => {
 
   makeRequest(
     "GET",
-    getANetflix
+    getANetflix.concat(id)
   )
     .then(response => {
       if (response != "null") {
@@ -60,7 +60,7 @@ const removeAProgram = () => {
 
   makeRequest(
     "DELETE",
-    removeNetflix
+    removeNetflix.concat(id)
   )
     .then(response => {
       let responseMessage = JSON.parse(response);
@@ -84,7 +84,7 @@ const updateAProgram = () => {
 
   makeRequest(
     "PUT",
-    updateNetflix,
+    updateNetflix.concat(id),
     JSON.stringify(program)
   )
     .then(response => {
