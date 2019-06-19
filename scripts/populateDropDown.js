@@ -28,7 +28,7 @@ const populateTitles = programmes => {
 };
 
 const populateGenres = genres => {
-    populateDropDown(genres, "genre", "genreId", "genre");
+    populateDropDown(genres, "genre", "genreId", "genreName");
 };
 
 const populateDropDown = (response, drpdwn, value, field) => {
