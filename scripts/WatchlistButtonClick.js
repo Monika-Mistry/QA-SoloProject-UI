@@ -1,4 +1,4 @@
-const getWatchlist = "http://34.90.182.15:8888/netflixWatchlistApp/api/watchlist/getWatchlist";
+const getAllWatchlist = "http://34.90.182.15:8888/netflixWatchlistApp/api/watchlist/getWatchlist";
 const removeWatchlist = "http://34.90.182.15:8888/netflixWatchlistApp/api/watchlist/addAProgram";
 const addWatchlist = "http://34.90.182.15:8888/netflixWatchlistApp/api/watchlist/addAProgram";
 const updateWatchlist = "http://34.90.182.15:8888/netflixWatchlistApp/api/watchlist/updateAProgram/";
@@ -43,7 +43,7 @@ const removeFromWatchlist = () => {
 const getWatchlist = () => {
   makeRequest(
     "GET",
-    getWatchlist
+    getAllWatchlist
   )
     .then(response => {
       watchlistDisplayResults(response);
