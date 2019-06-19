@@ -1,4 +1,5 @@
-const displayResults = (results, headers, numFields, fct) => {
+const displayResults = (results, headers, numFields, fct, method) => {
+
   let records = [];
   let resultObj = JSON.parse(results);
 
@@ -40,12 +41,15 @@ const displayResults = (results, headers, numFields, fct) => {
         button.className = "btn btn-dark myBtn";
         button.innerHTML = "Details";
         cell.append(button);
-      } else {
-        let button = document.createElement('button');
-        button.type = "button";
-        button.className = "btn btn-dark myBtn";
-        button.innerHTML = fct;
-        cell.append(button);
+      } else if (headers[i] === "select") {
+        let btnFunction = method.concat("(").concat(value.netflixId).concat(")");
+        let btnCRUD = document.createElement('input');
+        btnCRUD.type = "button";
+        btnCRUD.className = "btn btn-dark myBtn";
+        btnCRUD.value = fct;
+        btnCRUD.addEventListener("click", () => {btnFunction});
+
+        cell.append(btnCRUD);
       }
     }
   });
@@ -60,11 +64,11 @@ const netflixDisplayResults = results => {
     "details",
     "select"
   ];
-  displayResults(results, headers, 4, "Add");
+  displayResults(results, headers, 4, "Add", "addToWatchlistTable");
 };
 
 const watchlistDisplayResults = results => {
   let headers = ["netflixId", "status", "details", "select"];
 
-  displayResults(results, headers, 2, "Delete");
+  displayResults(results, headers, 2, "Delete", "removeFromWatchlistTable");
 };
