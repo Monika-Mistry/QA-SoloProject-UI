@@ -64,6 +64,7 @@ const netflixDisplayResults = results => {
 };
 
 const watchlistDisplayResults = results => {
-  let headers = ["title", "status", "details", "select"];
+  let headers = ["netflixId", "status", "details", "select"];
+
   displayResults(results, headers, 2, "Delete");
 };

@@ -1,8 +1,15 @@
-const getAllNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/getAllProgrammes";
-const getANetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/getAProgram/";
-const removeNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/addAProgram"
-const addNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/removeAProgram/";
-const updateNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/updateAProgram/";
+// const getAllNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/getAllProgrammes";
+// const getANetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/getAProgram/";
+// const removeNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/removeAProgram";
+// const addNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/addAProgram/";
+// const updateNetflix = "http://34.90.182.15:8888/netflixWatchlistApp/api/netflix/updateAProgram/";
+
+const getAllNetflix = "http://localhost:8080/netflixWatchlistApp/api/netflix/getAllProgrammes";
+const getANetflix = "http://localhost:8080/netflixWatchlistApp/api/netflix/getAProgram/";
+const removeNetflix = "http://localhost:8080/netflixWatchlistApp/api/netflix/removeAProgram/";
+const addNetflix = "http://localhost:8080/netflixWatchlistApp/api/netflix/addAProgram";
+const updateNetflix = "http://localhost:8080/netflixWatchlistApp/api/netflix/updateAProgram/";
+
 
 const getAllProgrammes = () => {
   makeRequest(
@@ -40,9 +47,11 @@ const addAProgram = () => {
     //title
     title: document.getElementById("title").value,
     //genreID
-    genreId: document.getElementById("genre").value
+    genreId: Number(document.getElementById("genre").value)
   };
 
+  console.log(program);
+  console.log(JSON.stringify(program));
   makeRequest(
     "POST",
     addNetflix,
