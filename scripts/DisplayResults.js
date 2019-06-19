@@ -1,7 +1,6 @@
 
 const displayResults = (results, headers, numFields, fct, method) => {
 
-
   let records = [];
   let resultObj = JSON.parse(results);
 
@@ -59,6 +58,19 @@ const displayResults = (results, headers, numFields, fct, method) => {
       }
     }
   });
+};
+
+const netflixDisplayAllResults = results => {
+  let headers = [
+    "netflixId",
+    "title",
+    "country",
+    "genreName",
+    "details",
+    "select"
+  ];
+
+  displayResults(results, headers, 4, "Add To Watchlist", "addToWatchlistTable");
 };
 
 const netflixDisplayResults = results => {
