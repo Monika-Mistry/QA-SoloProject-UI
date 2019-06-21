@@ -12,6 +12,6 @@ body {
     font-weight: bold;
 }
 
-html, body {
-    min-height: 100%;
+main div {
+    margin-top: 5px;
 }

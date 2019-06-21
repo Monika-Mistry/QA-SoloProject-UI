@@ -1,8 +1,8 @@
-// const getAllGenre = "http://34.90.182.15:8888/netflixWatchlistApp/api/genre/getAllGenres";
+const getAllGenre = "http://104.155.54.25:8888/netflixWatchlistApp/api/genre/getAllGenres";
 
 
-const getAllGenre =
-  "http://localhost:8080/netflixWatchlistApp/api/genre/getAllGenres";
+// const getAllGenre =
+//   "http://localhost:8080/netflixWatchlistApp/api/genre/getAllGenres";
 
 
 const getTitles = () => {
@@ -22,7 +22,6 @@ const getTitles = () => {
 const getGenres = () => {
   makeRequest("GET", getAllGenre)
     .then(response => {
-      console.table(response);
       populateGenres(response);
     })
     .catch(error => console.log(error.message));
@@ -38,7 +37,7 @@ const populateGenres = genres => {
 
 const populateDropDown = (response, drpdwn, value, field) => {
   let results = [];
-  resultObj = JSON.parse(response);
+  let resultObj = JSON.parse(response);
   //add to array
   if (Array.isArray(resultObj)) {
     results = results.concat(resultObj);

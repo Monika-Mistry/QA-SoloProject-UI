@@ -44,14 +44,19 @@ const displayResults = (results, headers, numFields, fct, method) => {
         cell.append(button);
 
       } else if (headers[i] === "select") {
-        let btnFunction = method.concat("(").concat(value.netflixId).concat(")");
         let btnCRUD = document.createElement('input');
         btnCRUD.type = "button";
         btnCRUD.className = "btn btn-dark myBtn";
         btnCRUD.value = fct;
-        btnCRUD.addEventListener("click", function () {
-          btnFunction;
-        });
+        // btnCRUD.addEventListener("click", function () {
+        //   method.concat("(").concat(value.netflixId).concat(")");
+        // });
+        // btnCRUD.onclick = function () {
+        //   method.concat("(").concat(value["netflixId"]).concat(")");
+        // };
+        let btnFunction = method.concat("(").concat(value["netflixId"]).concat(")");
+        btnCRUD.setAttribute("onclick", btnFunction);
+        
 
         cell.append(btnCRUD);
 
@@ -83,7 +88,7 @@ const netflixDisplayResults = results => {
     "select"
   ];
 
-  displayResults(results, headers, 4, "Add", "addToWatchlistTable");
+  displayResults(results, headers, 4, "Add To Watchlist", "addToWatchlistTable");
 };
 
 const watchlistDisplayResults = results => {
