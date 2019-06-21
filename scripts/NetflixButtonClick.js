@@ -1,8 +1,8 @@
-const getAllNetflix = "http://104.155.54.25:8888/netflixWatchlistApp/api/netflix/getAllProgrammes";
-const getANetflix = "http://104.155.54.25:8888/netflixWatchlistApp/api/netflix/getAProgram/";
-const removeNetflix = "http://104.155.54.25:8888/netflixWatchlistApp/api/netflix/removeAProgram/";
-const addNetflix = "http://104.155.54.25:8888/netflixWatchlistApp/api/netflix/addAProgram/";
-const updateNetflix = "http://104.155.54.25:8888/netflixWatchlistApp/api/netflix/updateAProgram/";
+const getAllNetflix = "/netflixWatchlistApp/api/netflix/getAllProgrammes";
+const getANetflix = "/netflixWatchlistApp/api/netflix/getAProgram/";
+const removeNetflix = "/netflixWatchlistApp/api/netflix/removeAProgram/";
+const addNetflix = "/netflixWatchlistApp/api/netflix/addAProgram/";
+const updateNetflix = "/netflixWatchlistApp/api/netflix/updateAProgram/";
 
 // const getAllNetflix =
 //   "http://localhost:8080/netflixWatchlistApp/api/netflix/getAllProgrammes";

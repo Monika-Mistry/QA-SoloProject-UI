@@ -1,4 +1,4 @@
-const getAllGenre = "http://104.155.54.25:8888/netflixWatchlistApp/api/genre/getAllGenres";
+const getAllGenre = "/netflixWatchlistApp/api/genre/getAllGenres";
 
 
 // const getAllGenre =
